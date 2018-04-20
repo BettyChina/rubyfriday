@@ -3,8 +3,8 @@
 <div class="jumbotron">
   <h1><strong><%= @event.desc %></strong></h1>
   <h4>Host: <%= @event.host.first_name %></h4>
-  <h4>description: <%= @event.city%>, <%=@event.state %></h4>
-  <h4>Date: <%= @event.date %></h4>
+  <h4>description: <%= @event.city%>, </h4>
+
   <% if @event.users.exists? %>
     <h4>Members: <%= @event.users.count %> </h4>
 </div>
@@ -14,14 +14,16 @@
     <thead>
       <tr>
         <th class="text-center">Name</th>
-        <th class="text-center">City</th>
-        <th class="text-center">State</th>
+        <th class="text-center">desription</th>
+       
       </tr>
     </thead>
     <tbody>
       <% @event.users.each do |group| %>
       <tr>
         <td><%= group.first_name %></td>
+        <td><%= group.last_name %></td>
+        <td><%= group.owner %></td>
    
       </tr>
       <% end %>

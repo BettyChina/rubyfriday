@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
  
   has_many :attendances
   has_many :events, through: :attendances
-  has_many :messages
+
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
-  validates :first_name, :last_name, :city, :state, :password, presence: true
+  validates :first_name, :last_name, :password, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
   validates :password, length: { minimum:8 }
   validate :password_matcher, on: :create
