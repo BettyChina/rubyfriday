@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     else
       @user = User.find(session[:id])
       @event = Event.all
-      #@other_event = Event.all
+   
     end
   end
 
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     else
       @user = User.find(session[:id])
       @event = Event.find(params[:id])
-      #@message = Message.where(event_id:@event.id)
+
     end
   end
 
