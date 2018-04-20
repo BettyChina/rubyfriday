@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Ror_test
+  database: ubuntu_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: Ror_production
-  username: Ror
-  password: <%= ENV['ROR_DATABASE_PASSWORD'] %>
+  database: ubuntu_production
+  username: ubuntu
+  password: <%= ENV['UBUNTU_DATABASE_PASSWORD'] %>
