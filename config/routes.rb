@@ -14,14 +14,14 @@ Rails.application.routes.draw do
 
   #event routes
   get 'events/:id' => 'events#show'
-  get 'events' => 'events#index'
+  get 'events' => 'eventss#index'
   post 'events' => 'events#create'
   get 'events/:id/edit' => 'events#edit'
   patch 'events/:id' => 'events#update'
   delete 'events/:id' => 'events#destroy'
 
   #comment routes
-  post 'messages/:event_id' => 'messages#create'
+  #post 'messages/:event_id' => 'messages#create'
 
   #attendances routes
   get 'events/:id/join' => 'attendances#join'
